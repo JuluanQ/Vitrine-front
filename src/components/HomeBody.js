@@ -3,9 +3,16 @@ import React from 'react';
 //Import stylesheet
 import '../assets/css/components/HomeBody.css';
 
+//Import packages
+import { motion } from 'framer-motion';
+
 const HomeBody = () => {
     return (
-        <div className='homeBodyContainer'>
+        <motion.div className='homeBodyContainer'
+            initial={{ opacity: 0, x: "-50%" }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: "-50%" }}
+        >
             <div className="cardsContainer">
                 <div className="leftPane">
 
@@ -30,7 +37,7 @@ const HomeBody = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 };
 

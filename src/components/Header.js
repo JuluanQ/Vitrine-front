@@ -3,7 +3,13 @@ import React from 'react';
 //Import stylesheet
 import '../assets/css/components/Header.css';
 
+//Import packages
+import { useNavigate } from 'react-router-dom';
+
 const Header = () => {
+
+    const navigate = useNavigate();
+
     return (
         <div className='headerContainer'>
             <div className="bannerContainer">
@@ -14,13 +20,13 @@ const Header = () => {
 
             <div className="homeMenus">
                 {/* Home Menus */}
-                <div className="homeMenu">
+                <div className="homeMenu" onClick={() => navigate("/Home")}>
                     <h1>Home</h1>
                 </div>
-                <div className="curriculumMenu">
+                <div className="curriculumMenu" onClick={() => navigate("/Curriculum")}>
                     <h1>Curriculum</h1>
                 </div>
-                <div className="contactMenu">
+                <div className="contactMenu" onClick={() => navigate("/Contact")}>
                     <h1>Contact</h1>
                 </div>
             </div>
