@@ -3,29 +3,42 @@ import React from 'react';
 //Import stylesheet
 import '../assets/css/pages/Home.css';
 
-const img = require('../assets/images/Photo_Profile.jpg');
+//Import components
+import Header from '../components/Header';
 
 const Home = () => {
     return (
         <>
-            <div className="bannerContainer">
-                <div className="banner">
+            <Header />
+            <div className="cardsContainer">
+                <div className="leftPane">
+
+                </div>
+                {/* Cards */}
+                <div className="card">
+                    <img className="cardImage" src={require('../assets/images/285x175.png')} />
+                    <div className="cardText">
+                        <h1>Card 1</h1>
+                    </div>
+                </div>
+                <div className="card">
+                    <img className="cardImage" src={require('../assets/images/285x175.png')} />
+                    <div className="cardText">
+                        <h1>Card 2</h1>
+                    </div>
+                </div>
+                <div className="card">
+                    <img className="cardImage" src={require('../assets/images/285x175.png')} />
+                    <div className="cardText">
+                        <h1>Card 3</h1>
+                    </div>
+                </div>
+                <div className="rightPane">
+
                 </div>
             </div>
-            <div className="profileImageContainer">
-                <img className="profileImage" src={img} alt="profile" />
-            </div>
-            <div className="homeMenus">
-                {/* Home Menus */}
-                <div className="homeMenu">
-                    <h1>Home</h1>
-                </div>
-                <div className="aboutMenu">
-                    <h1>About</h1>
-                </div>
-                <div className="contactMenu">
-                    <h1>Contact</h1>
-                </div>
+            <div className="Footer">
+
             </div>
         </>
     );
