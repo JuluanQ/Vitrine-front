@@ -1,21 +1,45 @@
-.cardsContainer {
-    display: grid;
-    margin-top: 50px;
-    grid-template-columns: repeat(5, 20%);
-    grid-template-rows: repeat(3, 20%);
-    justify-content: center;
+@import '../App.css';
+
+.homeBodyContainer {
+    display: flex;
+    flex-direction: column;
+
+    width: 80%;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.cardsContainer>div:hover {
+.eDesigns-title {
+    align-self: flex-start;
+    margin-left: 20%;
+}
+
+.myDesigns-title {
+    align-self: flex-start;
+    margin-top: 100px;
+    margin-left: 20%;
+}
+
+.cardsContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 300px);
+    justify-content: center;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.cardsContainer .card:hover {
     cursor: pointer;
     transform: perspective(500px) rotateY(-4deg) rotateX(-4deg);
-    transition: 0.5s all;
+    transition: 0.25s ease-in;
 }
+
 
 .cardsContainer .card {
     display: flex;
     flex-direction: column;
-    margin: 2em;
+    margin: 1em;
     padding: 1em;
     height: 250px;
     min-width: 150px;
@@ -23,11 +47,9 @@
     background-color: #f5f5f5;
     box-shadow: 1px 5px 6px 1px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
-}
 
-.cardsContainer .card:first-child {
-    grid-column-start: 2;
-    grid-row-start: 2;
+    transition: 0.25s ease-out;
+    transform: perspective(500px) rotateY(0deg) rotateX(0deg);
 }
 
 .card .cardImage {
@@ -43,7 +65,9 @@
 }
 
 @media screen and (max-width: 768px) {
-
+    .cardsContainer {
+        grid-template-columns: repeat(2, 300px);
+    }
 
     .leftPane {
         display: none;
@@ -51,15 +75,13 @@
 
     .rightPane {
         display: none;
-    }
-
-    .cardsContainer {
-        grid-template-columns: repeat(2, 50%);
     }
 }
 
 @media screen and (max-width: 500px) {
-
+    .cardsContainer {
+        grid-template-columns: repeat(1, 300px);
+    }
 
     .leftPane {
         display: none;
@@ -67,9 +89,5 @@
 
     .rightPane {
         display: none;
-    }
-
-    .cardsContainer {
-        grid-template-columns: 100%;
     }
 }
